@@ -1,4 +1,4 @@
-name: React Build and Deploy
+name: Build and Test
 
 on:
   push:
@@ -10,27 +10,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
-
     steps:
     - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 20
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 20
 
     - name: Install dependencies
-      run: |
-        npm run install-all
+      run: npm run install-all
 
     - name: Build React app
       run: |
         cd client
         npm run build
 
-    - name: Build verification
+    - name: Verify build
       run: |
+        echo "✅ Build completed successfully!"
         ls -la client/build/

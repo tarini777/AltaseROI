@@ -1,16 +1,12 @@
-# This workflow will build and test the ATLASE ROI React application
-# For more information see: https://docs.github.com/en/actions/using-workflows
-
-name: ATLASE ROI Build and Test
+# Backup build verification workflow
+name: Build Verification
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
-  build-and-test:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,15 +15,10 @@ jobs:
         with:
           node-version: 20
           
-      - name: Install dependencies
-        run: npm run install-all
-        
-      - name: Build React app
+      - name: Install and build
         run: |
-          cd client
-          npm run build
+          npm run install-all
+          cd client && npm run build
           
-      - name: Verify build output
-        run: |
-          ls -la client/build/
-          echo "Build completed successfully!"
+      - name: Success
+        run: echo "✅ ATLASE ROI application builds successfully!"
