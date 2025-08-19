@@ -369,4 +369,4 @@ For questions or support, please refer to the ATLASE white paper or contact the 
 
 ---
 
-**Note**: This tool is based on the principles outlined in the ATLASE white paper. The ROI calculations and recommendations are estimates based on industry averages and should be validated against your organization's specific circumstances. Technology complexity factors significantly impact implementation costs and timelines. 
+**Note**: This tool is based on the principles outlined in the ATLASE white paper. The ROI calculations and recommendations are estimates based on industry averages and should be validated against your organization's specific circumstances. Technology complexity factors significantly impact implementation costs and timelines. # AltaseROI
